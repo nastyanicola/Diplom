@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0b0b0f;
+    color: #e6e6e6;
+}
+
+.login-box {
+    width: 400px;
+    margin: 120px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(214, 199, 161, 0.3);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #d6c7a1;
+    color: #d6c7a1;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #d6c7a1;
+    border: 1px solid #d6c7a1;
+    color: #111;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 289px;
+    background: rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    color: #e6e6e6;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: #DCB483;
+}
+
+.sidebar a.active {
+    background: rgba(212, 175, 55, 0.15);
+    color: #DCB483;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.crm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.crm-table thead {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.crm-table th {
+    text-align: left;
+    padding: 14px;
+    font-size: 14px;
+    color: #DCB483;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.crm-table td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e6e6e6;
+}
+
+.crm-table tr:hover {
+    background: rgba(212, 175, 55, 0.05);
+    transition: 0.3s;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-btn {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #d6c7a1;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.edit-btn,
+.delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn:hover {
+    opacity: 0.7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 450px;
+    margin: 80px auto;
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.modal-content h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #DCB483;
+    font-weight: 500;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"],
+.modal-content input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(214, 199, 161, 0.4);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: #DCB483;
+    box-shadow: 0 0 8px rgba(220, 180, 131, 0.3);
+    outline: none;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(214, 199, 161, 0.4);
+    border-radius: 8px;
+    color: #d6c7a1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d6c7a1' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.modal-content select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #DCB483;
+}
+
+.modal-content select option {
+    background: #1a1a1e;
+    color: #d6c7a1;
+}
+
+.modal-content select option[value=""] {
+    color: #888;
+}
+
+.modal-content button[type="submit"] {
+    background: #DCB483;
+    color: #111;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background: #c9a06b;
+    transform: translateY(-1px);
+}
+
+.modal-content button:not([type="submit"]) {
+    background: transparent;
+    border: 1px solid rgba(214, 199, 161, 0.4);
+    color: #d6c7a1;
+    padding: 10px 20px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:not([type="submit"]):hover {
+    background: rgba(214, 199, 161, 0.1);
+    border-color: #DCB483;
+}
+
+.accent {
+    color: #DCB483;
+}
+
+.main-text-name {
+    font-size: 40px;
+}
